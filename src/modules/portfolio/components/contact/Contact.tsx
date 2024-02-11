@@ -50,7 +50,7 @@ export default function Contact() {
     try {
       setLoading(true);
       emailjs.init(PUBLIC_ID);
-      await emailjs.send(
+      emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         emailData,
