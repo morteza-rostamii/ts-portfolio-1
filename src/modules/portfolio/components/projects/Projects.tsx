@@ -19,7 +19,7 @@ let projects = [
     id: faker.string.uuid(),
     name: 'Tesla Homepage',
     href: '/tesla',
-    image: 'https://i.pinimg.com/originals/da/94/fc/da94fc8b73439fa959d211de446f9671.png',
+    image: '/portfolio/projects/teslahomepage.png',
     description: 'A clone of tesla home page ui.',
   },
   {
@@ -33,7 +33,7 @@ let projects = [
     id: faker.string.uuid(),
     name: 'Color Game',
     href: '/colorGame',
-    image: '/portfolio/projects/',
+    image: '/portfolio/projects/colorGuessGame.png',
     description: 'A color game in react',
   },
   {

@@ -35,6 +35,28 @@
 # how to generate 3 random hex colors?
 # what states do i need?
 
+==============================
 
+# how hex works?
+==
+
+# 6 digits
+# red, green, blue
+# base 16 digits 
+
+# 0 to 9
+# A to F =: 10 to 15
+
+# A = 10
+# B = 11
+
+First two digits: Red intensity (00-FF, where FF is maximum)
+Second two digits: Green intensity (00-FF)
+Last two digits: Blue intensity (00-FF)
+
+#FF0000
+
+# short hand
+#F00 is equivalent to #FF0000 as both represent pure red.
 
  -->
