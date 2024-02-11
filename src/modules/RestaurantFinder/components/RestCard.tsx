@@ -1,54 +1,53 @@
 import { Image } from '@chakra-ui/react'
-import React, { useEffect, useRef, useState } from 'react'
-import { HiArrowLongLeft, HiOutlineBookmark, HiOutlinePhone, HiStar } from 'react-icons/hi2'
-import { motion } from 'framer-motion'
+import { useRef,  } from 'react'
+import { HiOutlineBookmark, HiOutlinePhone, HiStar } from 'react-icons/hi2'
 
 const RestCard = ({item}: any) => {
-  let initX = 0;
-  const [offsetX, setOffsetX] = useState(0);
+  //let initX = 0;
+  //const [offsetX, setOffsetX] = useState(0);
 
   const cardRef = useRef(null);
 
   // event handlers --------------------
 
-  const handMouseDown = (e:any) => {
-    const cardEl:any = cardRef.current;
-    if (!cardEl) return;
+  // const handMouseDown = (e:any) => {
+  //   const cardEl:any = cardRef.current;
+  //   if (!cardEl) return;
 
-    initX = e.offsetX;
+  //   initX = e.offsetX;
 
-    // mouseMove
-    document.addEventListener('mousemove', handMouseMove);
+  //   // mouseMove
+  //   document.addEventListener('mousemove', handMouseMove);
 
-    // mouseUp
-    document.addEventListener('mouseup', handMouseUp);
-  }
+  //   // mouseUp
+  //   document.addEventListener('mouseup', handMouseUp);
+  // }
 
-  const handMouseUp = (e:any) => {
-    const cardEl:any = cardRef.current;
-    if (!cardEl) return;
-    // remove: mouse move
-    document.removeEventListener('mousemove', handMouseMove);
+  // const handMouseUp = (e:any) => {
+  //   const cardEl:any = cardRef.current;
+  //   if (!cardEl) return;
+  //   // remove: mouse move
+  //   document.removeEventListener('mousemove', handMouseMove);
 
-    // card back to it's position
-    cardEl.style.transform = `translateX(${0}px)`;
-  }
+  //   // card back to it's position
+  //   cardEl.style.transform = `translateX(${0}px)`;
+  // }
 
-  const handMouseMove = (e:any) => {
-    const translateAmount = initX - e.offsetX;
+  // const handMouseMove = (e:any) => {
+  //   const translateAmount = initX - e.offsetX;
 
-    const cardEl:any = cardRef.current;
-    if (!cardEl) return;
-    console.log(e.offsetX, initX, initX - e.offsetX);
-    //group-hover:-translate-x-28
+  //   const cardEl:any = cardRef.current;
+  //   if (!cardEl) return;
+  //   console.log(e.offsetX, initX, initX - e.offsetX);
+  //   //group-hover:-translate-x-28
 
-    //cardEl.style.translateX = initX - e.offsetX;
+  //   //cardEl.style.translateX = initX - e.offsetX;
 
-    if (translateAmount <= 200 && translateAmount >= 0) {
-      cardEl.style.transform = `translateX(-${translateAmount}px)`;
-    }
+  //   if (translateAmount <= 200 && translateAmount >= 0) {
+  //     cardEl.style.transform = `translateX(-${translateAmount}px)`;
+  //   }
 
-  }
+  // }
 
   // useEffect(() => {
   //   const cardEl:any = cardRef.current;

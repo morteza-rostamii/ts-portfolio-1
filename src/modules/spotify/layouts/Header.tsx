@@ -1,5 +1,4 @@
 import { Button } from '@chakra-ui/react'
-import React from 'react'
 import Logo from '../svgs/Logo'
 
 const Header = () => {

@@ -1,6 +1,4 @@
-import { Button, Image } from '@chakra-ui/react'
-import React from 'react'
-import ReactLogo from '../../icons/ReactLogo';
+import { Button,  } from '@chakra-ui/react'
 import HeroImg from './HeroImg';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { BsGithub } from 'react-icons/bs';

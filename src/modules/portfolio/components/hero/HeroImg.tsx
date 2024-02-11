@@ -1,6 +1,4 @@
 import {motion} from "framer-motion";
-import { SiCreatereactapp } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
 import { SiReactos } from "react-icons/si";
 
 const HeroImg = () => {

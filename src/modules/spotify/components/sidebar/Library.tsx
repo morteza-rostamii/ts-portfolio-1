@@ -1,4 +1,3 @@
-import React from 'react'
 import LibIcon from '../../svgs/LibIcon'
 import { Button, IconButton } from '@chakra-ui/react'
 import { HiPlus } from 'react-icons/hi'

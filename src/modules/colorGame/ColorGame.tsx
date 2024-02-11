@@ -1,5 +1,5 @@
 import { Button } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const ColorGame = () => {
   const [gameState, setGameState] = useState<'play' | 'over'>('play');

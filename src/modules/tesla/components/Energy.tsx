@@ -1,6 +1,5 @@
 import { Image, Link } from '@chakra-ui/react'
 import { faker } from '@faker-js/faker'
-import React from 'react'
 
 const items = [
   {
@@ -15,7 +14,7 @@ const items = [
   },
 ]
 
-const links = Array.from({length: 2}).map((el:any) => ({
+const links = Array.from({length: 2}).map(() => ({
   id: faker.string.uuid(),
   name: faker.lorem.words({min:1, max: 2}),
   href: "#",

@@ -1,4 +1,3 @@
-import React from 'react'
 import Vehicles from './Vehicles';
 import Energy from './Energy';
 import Charging from './Charging';
@@ -14,7 +13,7 @@ const tabs = {
 };
 
 const MegaMenu = ({
-  setMegaOpen,
+  //setMegaOpen,
   activeTab,
 }: any) => {
   return (

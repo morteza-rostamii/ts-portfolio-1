@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../icons/Logo'
 import { Link } from 'react-router-dom'
 import useScreenSize from '@/hooks/useScreenSize'
@@ -37,7 +37,7 @@ const links = [
 const SectionModelY = () => {
 
   // responsive video -------------------
-  const {width, height} = useScreenSize();
+  const {width, } = useScreenSize();
   const [videoSource, setVideoSource] = useState('/tesla/Homepage-Model-Y-Mobile-NA.mp4');
 
   useEffect(() => {

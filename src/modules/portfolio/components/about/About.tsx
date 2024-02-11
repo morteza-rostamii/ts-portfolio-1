@@ -1,5 +1,5 @@
-import { Avatar, Button, IconButton, Image } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Avatar, IconButton } from '@chakra-ui/react'
+import { useState } from 'react'
 import SectionHead from '../SectionHead'
 import { faker } from '@faker-js/faker'
 import './About.css';

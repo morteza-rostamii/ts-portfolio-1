@@ -1,11 +1,9 @@
-import React from 'react'
 import SectionModelY from './components/SectionModelY'
 import SectionModel3 from './components/SectionModel3'
 import SectionModelS from './components/SectionModelS'
 import SectionModelX from './components/SectionModelX'
 import SectionExperience from './components/SectionExperience'
 import SectionSolar from './components/SectionSolar'
-import SectionAccessories from './components/SectionAccessories'
 
 const Tesla = () => {
   return (

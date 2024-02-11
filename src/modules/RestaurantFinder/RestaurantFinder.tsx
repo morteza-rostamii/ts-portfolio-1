@@ -1,15 +1,13 @@
-import { pexelsClient } from '@/configs/config'
+//import { pexelsClient } from '@/configs/config'
 import { IconButton } from '@chakra-ui/react'
 import { faker } from '@faker-js/faker'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { HiArrowSmallLeft, HiMagnifyingGlass, HiOutlineShoppingBag } from 'react-icons/hi2'
 import RestCard from './components/RestCard'
 
-
-
 const RestaurantFinder = () => {
   const [restaurants, setRestaurants] = useState([]);
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
   const QUERY = 'food';
   const COUNT = 10;
 
@@ -19,7 +17,7 @@ const RestaurantFinder = () => {
         //data.photos[i].src.medium,
         //pexelsClient.photos.search({ query: QUERY, per_page: COUNT })
         
-        const restaurants:any = Array.from({length: COUNT}).map((el:any, i:number) => ({
+        const restaurants:any = Array.from({length: COUNT}).map(() => ({
           id: faker.string.uuid(),
           name: faker.location.street(),
           address: faker.location.streetAddress(),

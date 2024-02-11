@@ -1,44 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import Logo from '../icons/Logo'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import useScreenSize from '@/hooks/useScreenSize'
-import { FaGlobe, FaRegQuestionCircle, FaRegUserCircle } from 'react-icons/fa'
-import { faker } from '@faker-js/faker'
-import MegaMenu from './MegaMenu'
 import { Image } from '@chakra-ui/react'
 
-const links = [
-  {
-    id: faker.string.uuid(),
-    name: 'Vehicles',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Energy',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Charging',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Discover',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Shop',
-    href: '#'
-  },
-];
+
 
 const SectionModelS = () => {
 
   // responsive video -------------------
-  const {width, height} = useScreenSize();
+  const {width, } = useScreenSize();
   const [activeImg, setActiveImg] = useState('/tesla/2/Model-S-homepage-mobile.avif');
 
   useEffect(() => {

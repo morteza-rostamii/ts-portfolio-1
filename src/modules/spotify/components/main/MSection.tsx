@@ -1,7 +1,4 @@
-'use client'
-
 import { Button } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
 import ListCard from './ListCard';
 import SpoMainFoot from './SpoMainFoot';
 import { Link } from 'react-router-dom';
@@ -9,7 +6,7 @@ import { faker } from '@faker-js/faker';
 
 faker.seed(123);
 
-const playlists = Array.from({length: 4}).map((el:any) => {
+const playlists = Array.from({length: 4}).map(() => {
   return {
     id: faker.string.uuid(),
     title: faker.lorem.words({min: 1, max: 2}),
@@ -20,7 +17,6 @@ const playlists = Array.from({length: 4}).map((el:any) => {
 
 const MSection = () => {
   
-
   return (
     <div
     className='

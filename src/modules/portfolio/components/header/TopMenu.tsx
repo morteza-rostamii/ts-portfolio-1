@@ -1,16 +1,15 @@
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
+  //DrawerFooter,
+  //DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
+  //DrawerCloseButton,
   useDisclosure,
   Button,
   IconButton,
 } from '@chakra-ui/react'
-import React from 'react'
 import { HiBars2 } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 

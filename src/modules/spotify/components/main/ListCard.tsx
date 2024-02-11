@@ -1,5 +1,4 @@
 import { IconButton, Image } from '@chakra-ui/react'
-import React from 'react'
 import { IoIosPlay } from "react-icons/io";
 
 const ListCard = ({item}: any) => {

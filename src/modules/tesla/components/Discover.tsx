@@ -1,8 +1,7 @@
-import { Image, Link } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/react'
 import { faker } from '@faker-js/faker'
-import React from 'react'
 
-const links = Array.from({length: 4}).map((el:any) => ({
+const links = Array.from({length: 4}).map(() => ({
   id: faker.string.uuid(),
   name: faker.lorem.words({min:1, max: 2}),
   href: "#",
@@ -22,6 +21,7 @@ const Discover = () => {
           flex flex-col gap-4
           '
           key={i}>
+            <span className='hidden'>{el}</span>
             <h2 className='text-gray-500 text-lg'>
               {faker.lorem.words({min: 1, max: 2})}
             </h2>

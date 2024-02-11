@@ -1,6 +1,5 @@
-import { Button, Image, Input, InputGroup, InputRightElement, Spinner, Textarea } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { BsSendFill } from 'react-icons/bs'
+import { Button, Input, InputGroup, Textarea, } from '@chakra-ui/react'
+import { useState } from 'react'
 import { IoMdSend } from 'react-icons/io'
 import SectionHead from '../SectionHead'
 import { useForm } from 'react-hook-form';
@@ -51,12 +50,13 @@ export default function Contact() {
     try {
       setLoading(true);
       emailjs.init(PUBLIC_ID);
-      emailjs.send(
+      await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         emailData,
       )
-      .then((res:any) => {
+      //res:any
+      .then(() => {
         setLoading(false);
         emailSuccessToast();
         reset();

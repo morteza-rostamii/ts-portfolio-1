@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
 import ProjCard from './ProjCard'
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { Spinner } from '@chakra-ui/react';
 
-const GridProjects = ({projects, fetchData, prev, originalProjs, loading}: any) => {
+const GridProjects = ({projects, fetchData, prev, originalProjs}: any) => {
 
   return (
 

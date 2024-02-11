@@ -1,5 +1,3 @@
-import React from 'react'
-import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -17,7 +15,6 @@ import { BiLogoTailwindCss } from "react-icons/bi";
 import { FaNodeJs } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiTypescript } from "react-icons/si";
-import Autoplay from "embla-carousel-autoplay"
 import SectionHead from '../SectionHead';
 import SkillCard from './SkillCard';
 

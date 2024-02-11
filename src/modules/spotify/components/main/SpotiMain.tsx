@@ -1,6 +1,4 @@
 import { Button, IconButton } from '@chakra-ui/react'
-import React from 'react'
-import { HiArrowLeft } from 'react-icons/hi'
 import { HiChevronLeft } from "react-icons/hi2";
 import { HiChevronRight } from "react-icons/hi2";
 import MSection from './MSection';

@@ -19,6 +19,7 @@
     "clsx": "^2.1.0",
     "embla-carousel-autoplay": "^8.0.0-rc22",
     "embla-carousel-react": "^8.0.0-rc22",
+    "firebase": "^10.8.0",
     "framer-motion": "^10.18.0",
     "lucide-react": "^0.323.0",
     "pexels": "^1.4.0",

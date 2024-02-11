@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from '../icons/Logo'
 import { Link } from 'react-router-dom'
 import { Button, IconButton } from '@chakra-ui/react'

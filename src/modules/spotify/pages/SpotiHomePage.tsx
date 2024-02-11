@@ -1,6 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react'
-//import './Page.css';
+import { useEffect, useRef, useState } from 'react'
 import Sidebar from '@/modules/spotify/components/sidebar/Sidebar';
 import SpotiMain from '@/modules/spotify/components/main/SpotiMain';
 
@@ -33,7 +32,7 @@ const SpotifyHomePage = () => {
     newWidthPercent = Math.round(newWidthPercent);
 
     const leftColWidth = newWidthPercent + '%';
-    const rightColWidth = 100 - newWidthPercent + '%';
+    //const rightColWidth = 100 - newWidthPercent + '%';
 
     console.log(e.clientX, containerRect.width, containerRect.left, leftColWidth);
     setCol1Width(leftColWidth);

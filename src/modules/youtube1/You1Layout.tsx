@@ -1,4 +1,3 @@
-import React from 'react'
 import { Outlet } from 'react-router'
 import You1Header from './You1Header'
 

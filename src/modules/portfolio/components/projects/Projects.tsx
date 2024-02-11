@@ -1,11 +1,7 @@
-import { Button, Image, Input, InputGroup, InputRightElement, Textarea } from '@chakra-ui/react'
 import { faker } from '@faker-js/faker'
-import React, { useEffect, useState } from 'react'
-import { BsSendFill } from 'react-icons/bs'
-import { IoMdSend } from 'react-icons/io'
 import ProjCard from './ProjCard'
-import GridProjects from './GridProjects'
 import SectionHead from '../SectionHead'
+//import { useState } from 'react';
 
 let projects = [
   {
@@ -38,14 +34,36 @@ let projects = [
   },
   {
     id: faker.string.uuid(),
+    name: 'Travel website',
+    href: 'https://rostami-react-ui-1.web.app/booking',
+    image: '/portfolio/projects/travel.png',
+    description: 'homepage design of a travel website.',
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'Online Shop',
+    href: 'https://rostami-react-ui-1.web.app/chair-site',
+    image: '/portfolio/projects/chairShop.png',
+    description: 'An online shop homepage ui.',
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'digikala',
+    href: 'https://rostami-react-ui-1.web.app/digikala',
+    image: '/portfolio/projects/digikala.png',
+    description: 'digikala homepage ui',
+  },
+  {
+    id: faker.string.uuid(),
     name: 'Restaurant Finder',
     href: '/restaurant',
     image: '/portfolio/projects/restaurant.jpg',
     description: 'Restaurant Finder ui',
   },
+  
 ];
 
-const placeholders = Array.from({length: 10}).map((el:any) => {
+const placeholders = Array.from({length: 10}).map(() => {
   return {
     id: faker.string.uuid(),
     name: 'placeholder',
@@ -60,47 +78,47 @@ const placeholders = Array.from({length: 10}).map((el:any) => {
 
 projects = [...projects, ...placeholders];
 
-let page = 1;
-let LIMIT = 6;
-let prev = 0;
+// let page = 1;
+// let LIMIT = 6;
+// let prev = 0;
 
 export default function Projects() {
-  const [items, setItems] = useState<any>([]);
-  const [loading, setLoading] = useState(true);
+  //const [items, setItems] = useState<any>([]);
+  //const [loading, setLoading] = useState(true);
 
-  function fetchData() {
-    return new Promise((resolve:any) => {
-      setTimeout(() => {
-        const chunk = projects.slice(prev, LIMIT * page);
-        prev = LIMIT * page;
-        resolve(chunk);
-      }, 1000);
-    })
-  }
+  // function fetchData() {
+  //   return new Promise((resolve:any) => {
+  //     setTimeout(() => {
+  //       const chunk = projects.slice(prev, LIMIT * page);
+  //       prev = LIMIT * page;
+  //       resolve(chunk);
+  //     }, 1000);
+  //   })
+  // }
 
-  async function getProjects() {
-    console.log(page, 'get projs')
+  // async function getProjects() {
+  //   console.log(page, 'get projs')
 
-    if ((prev >= projects.length)) {
-      console.log('--');
-      setLoading(false);
-      return;
-    }
+  //   if ((prev >= projects.length)) {
+  //     console.log('--');
+  //     setLoading(false);
+  //     return;
+  //   }
 
-    try {
-      setLoading(true);
-      const projs: any = await fetchData();
-      setLoading(false);
-      setItems((c:any) => ([
-        ...c,
-        ...projs,
-      ]));
-      page += 1;
-    }
-    catch(error: any) {
-      console.log(error?.message || error);
-    }
-  }
+  //   try {
+  //     setLoading(true);
+  //     const projs: any = await fetchData();
+  //     setLoading(false);
+  //     setItems((c:any) => ([
+  //       ...c,
+  //       ...projs,
+  //     ]));
+  //     page += 1;
+  //   }
+  //   catch(error: any) {
+  //     console.log(error?.message || error);
+  //   }
+  // }
 
   // useEffect(() => {
   //   getProjects();

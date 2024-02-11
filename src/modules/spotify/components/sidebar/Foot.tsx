@@ -1,5 +1,4 @@
 import { Button } from '@chakra-ui/react'
-import React from 'react'
 import { HiGlobe } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 

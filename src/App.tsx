@@ -1,4 +1,4 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import { Route, Routes } from 'react-router'
 import PortLayout from '@/modules/portfolio/layouts/PortLayout'
 import Portfolio from '@/modules/portfolio/pages/Portfolio'
@@ -10,19 +10,16 @@ import TeslaLayout from './modules/tesla/components/TeslaLayout'
 import Tesla from './modules/tesla/Tesla'
 import RestaurantFinder from './modules/RestaurantFinder/RestaurantFinder'
 import RestaurantFinderLayout from './modules/RestaurantFinder/RestaurantFinderLayout'
-import RestaurantSingle from './modules/RestaurantFinder/RestaurantSingle'
+//import RestaurantSingle from './modules/RestaurantFinder/RestaurantSingle'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 //import './App.css'
 import {motion} from 'framer-motion'
 import ColorGame from './modules/colorGame/ColorGame'
+import {app} from './fire/firebase'
 
 function App() {
-
-  const foo = () => {
-    console.log();
-  }
-
+  console.log(app);
   return (
     <motion.div
     className='h-full'

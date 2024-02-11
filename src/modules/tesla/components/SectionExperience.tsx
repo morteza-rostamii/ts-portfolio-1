@@ -1,43 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import Logo from '../icons/Logo'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useScreenSize from '@/hooks/useScreenSize'
-import { FaGlobe, FaRegQuestionCircle, FaRegUserCircle } from 'react-icons/fa'
-import { faker } from '@faker-js/faker'
-import MegaMenu from './MegaMenu'
-
-const links = [
-  {
-    id: faker.string.uuid(),
-    name: 'Vehicles',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Energy',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Charging',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Discover',
-    href: '#'
-  },
-  {
-    id: faker.string.uuid(),
-    name: 'Shop',
-    href: '#'
-  },
-];
 
 const SectionExperience = () => {
 
   // responsive video -------------------
-  const {width, height} = useScreenSize();
+  const {width, } = useScreenSize();
   const [videoSource, setVideoSource] = useState('/tesla/Homepage-Demo-Drive-Mobile-NA.webm');
 
   useEffect(() => {

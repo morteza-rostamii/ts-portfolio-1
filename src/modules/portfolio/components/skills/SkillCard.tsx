@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react'
-//import './SkillCard.css'
+import { useEffect, useRef } from 'react'
 import {motion, useInView} from 'framer-motion'
 import Proficiency from './Proficiency';
 

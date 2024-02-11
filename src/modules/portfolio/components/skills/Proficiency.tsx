@@ -1,5 +1,5 @@
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const ProficiencyCounter = ({proficiency}: any) => {
   const value = proficiency;

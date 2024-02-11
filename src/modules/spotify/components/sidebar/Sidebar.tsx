@@ -1,6 +1,4 @@
-"use client"
-
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { HiHome, HiSearch } from 'react-icons/hi'
 import Logo from '../../svgs/Logo'
 import Library from './Library'
