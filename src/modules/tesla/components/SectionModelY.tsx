@@ -38,12 +38,12 @@ const SectionModelY = () => {
 
   // responsive video -------------------
   const {width, } = useScreenSize();
-  const [videoSource, setVideoSource] = useState('/tesla/Homepage-Model-Y-Mobile-NA.mp4');
+  const [videoSource, setVideoSource] = useState('https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Mobile-NA.mp4');
 
   useEffect(() => {
     console.log(width);
-    if (width >= 640) setVideoSource('/tesla/Homepage-Model-Y-Desktop-NA.mp4');
-    else setVideoSource('/tesla/Homepage-Model-Y-Mobile-NA.mp4');
+    if (width >= 640) setVideoSource('https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Desktop-NA.mp4');
+    else setVideoSource('https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Mobile-NA.mp4');
   }, [width]);
 
   // megaMenu----------------------------

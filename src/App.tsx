@@ -16,9 +16,11 @@ import RestaurantFinderLayout from './modules/RestaurantFinder/RestaurantFinderL
 //import './App.css'
 import {motion} from 'framer-motion'
 import ColorGame from './modules/colorGame/ColorGame'
-//import {app} from './fire/firebase'
+// @ts-ignore
+import { fireApp } from './fire/firebase'
 
 function App() {
+
   return (
     <motion.div
     className='h-full'
