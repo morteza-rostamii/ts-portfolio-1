@@ -1,0 +1,39 @@
+
+ol {
+  padding-left: 20px;
+}
+
+/* ~ The Spanless List Item Styles! ~ */
+ol { 
+  counter-reset: item; 
+  /* Hides default counter */
+  list-style: none;
+}
+
+li {
+  /* Non-essential list typography */
+  font-size: 16px;
+  line-height: 1.8;
+  /* Use flex for hanging bullets */
+  /* Remove 'display' for inline bullets */
+  display: flex;
+  
+  
+}
+
+/* Begin the fake counters */
+li:before {
+  /* Trail counter with period and a space */
+  content: counter(item) ". ";
+  /* Increase one for every one new item */
+  counter-increment: item;
+  
+  /* Color the counter however you want! */
+  margin-right: 14px;
+  font-style: italic;
+  font-weight: 700;
+  color: #22c55e;
+  @media screen and (min-width: 800px)  {
+    margin-right: 6px;
+  }
+}

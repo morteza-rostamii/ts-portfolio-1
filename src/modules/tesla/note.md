@@ -1,0 +1,8 @@
+<!-- 
+
+# tesla clone notes: 
+==
+
+
+
+ -->

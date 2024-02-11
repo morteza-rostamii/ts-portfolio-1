@@ -149,9 +149,155 @@ type Video = {
   videoUrl: string,
 }
 
-# 
+# video auto play: 
 
+useEffect(() => {
 
+  if (videoRef.current == null) return;
 
+  if (isVideoPlaying) {
+    videoRef.current.currentTime = 0;
+    videoRef.Current.play();
+  }
+}, [isVideoPlaying])
+
+# then we use: 
+onMouseenter
+and 
+onMouseLeave
+
+<video 
+
+className="
+${isVideoPlaying ? 'opacity=100' : 'opacity=0'}
+
+block h-full object-cover absolute inset-0 transition-opacity duration-200"
+
+ref={vidoeRef}
+muted
+playsInline
+src={videoUrl}
+>
+
+# image border animation
+<img
+classname=`
+
+block w-full h-full object-cover transition-[border-radius] duration-200 
+# some delay for video to show up
+delay-200
+${isVideoPlaying ? 'rounded-none' : 'rounded-xl'}
+`
+/>
+
+#=========================================
+
+# sidebar:
+==
+
+# small sidebar
+aside:
+  classname: 
+    sticky top-0 overflow-y-auto scrollbar-hidden lg:hidden
+
+# large sidebar: (desktop)
+  classname:
+    w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden 
+
+# for show more of less =: just render more items on more clicked.
+
+==========
+# custom scrollBar:
+
+# firefox
+
+* {
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  @apply bg-transparent w-2;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-secondary-dark rounded-full;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  @apply bg-transparent;
+}
+
+.scrollbar-hidden::hover::-webkit-scrollbar-thumb {
+  @apply bg-secondary;
+}
+
+#===================================
+
+# sidebar: on small screen and large
+==
+
+type TSidebarContext = {
+  isLargeOpen: boolean,
+  isSmallOpen: boolean,
+  toggle: () => void,
+  close: () => void,
+}
+
+const SidebarContext = createContext<TSidebarContext | null>(null);
+
+export function SidebarProvider({children}: SidebarProviderProps) {
+  const [isLargeOpen, setIsLargeOpen] = useState(true);
+  const [isSmallOpen, setIsSmallOpen] = useState(flase);
+
+  // on large screen =: close the offCanvas
+  useEffect(() => {
+    const handle = () => {
+      if (!isScreenSmall()) setIsSmallOpen(false);
+    }
+
+    window.addEventListener("resize", handle);
+
+    return () => window.removeEventListener("resize", handle);
+  }, []);
+
+  function isScreenSmall() {
+    return window.innerWidth < 1024;
+  }
+
+  function toggle() {
+    if (isScreenSmall()) {
+      setIsSmallOpen(c => !c);
+    }
+    else {
+      setIsLargeOpen(c => !c);
+    }
+  }
+
+  function close() {
+    if (isScreenSmall()) {
+      setIsSmallOpen(false)
+    } 
+    else {
+      setIsLargeOpen(false)
+    }
+  }
+
+  return <SidebarContext.Provider value={{
+    isLargeOpen,
+    isSmallOpen,
+    toggle,
+    close,
+  }}>
+    {children}
+  </SidebarContext.Provider> 
+}
+
+export function useSidebarContext() {
+  const value = useContext(SidebarContext);
+  if (value == null) {
+    throw Error("can not be used outside of provider.")
+  }
+  return value;
+}
 
 -->
