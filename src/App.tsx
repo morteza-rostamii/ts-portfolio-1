@@ -18,6 +18,14 @@ import {motion} from 'framer-motion'
 import ColorGame from './modules/colorGame/ColorGame'
 // @ts-ignore
 import { fireApp } from './fire/firebase'
+import BudgetPage from './modules/budgetApp/BudgetPage'
+import TicTacToePage from './modules/ticTacToe/TicTacToePage'
+
+//import connectDb from '@/configs/indexedDb';
+//import { useEffect, useState } from 'react'
+import PizzaLayout from './modules/pizzaApp/PizzaLayout'
+import PizzaPage from './modules/pizzaApp/PizzaPage'
+import Rating1Page from './modules/ratingComp1/Rating1Page'
 
 function App() {
 
@@ -31,8 +39,8 @@ function App() {
       opacity: 1,
     }}
     transition={{
-      duration: 1,
-      delay: 1,
+      duration: .5,
+      delay: .5,
     }}
     >
       <Routes>
@@ -69,6 +77,30 @@ function App() {
         <Route 
         path='/colorGame' 
         element={<ColorGame/>}>
+        </Route>
+
+        <Route 
+        path='/budget' 
+        element={<BudgetPage/>}>
+        </Route>
+        
+        <Route 
+        path='/ticTacToe' 
+        element={<TicTacToePage/>}>
+        </Route>
+
+        {/* pizza */}
+        <Route element={<PizzaLayout/>}>
+          <Route 
+          path='/pizza' 
+          element={<PizzaPage/>}>
+          </Route>
+        </Route>
+
+        {/* rating component 1 */}
+        <Route 
+        path='/rating1' 
+        element={<Rating1Page/>}>
         </Route>
       </Routes>
     </motion.div>

@@ -20,10 +20,17 @@ let projects = [
   // },
   {
     id: faker.string.uuid(),
-    name: 'Spotify HomePage',
-    href: '/spotify',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2Fspotify-home.jpg?alt=media&token=96d2d5de-df92-4b10-8176-374a78540311',
-    description: 'A clone of spotify home page ui.',
+    name: 'Budget App',
+    href: '/budget',
+    image: '',
+    description: 'a budget application',
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'Color Game',
+    href: '/colorGame',
+    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2FcolorGuessGame.png?alt=media&token=cc4418b8-bbd7-4949-a84a-f9508e89f192',
+    description: 'A color game in react',
   },
   {
     id: faker.string.uuid(),

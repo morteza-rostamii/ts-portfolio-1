@@ -70,7 +70,7 @@ export default function About() {
 
         <Avatar 
         className='object-cover w-full !border-2 !border-gray-400 mx-auto mb-8'
-        src={'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/me.jpg?alt=media&token=ff8f4570-8c4e-4620-9d2b-df01a23efe1a'}
+        src={'https://i.postimg.cc/nLgrdb5V/me.jpg'}
         size={'2xl'}
         />
         <div
