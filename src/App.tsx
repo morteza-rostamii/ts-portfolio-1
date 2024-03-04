@@ -26,8 +26,28 @@ import TicTacToePage from './modules/ticTacToe/TicTacToePage'
 import PizzaLayout from './modules/pizzaApp/PizzaLayout'
 import PizzaPage from './modules/pizzaApp/PizzaPage'
 import Rating1Page from './modules/ratingComp1/Rating1Page'
+import SearchInputPage from './modules/searchInput/SearchInputPage'
+import SudokuPage from './modules/sudoku/SudokuPage'
+import PaintPage from './modules/paintApp/PaintPage'
+import IndexPage from './modules/index/IndexPage'
+import IndexLayout from './modules/index/IndexLayout'
+import TaskUi1 from './modules/taskUi1/TaskUi1'
+import { useEffect } from 'react'
+import { faker } from '@faker-js/faker'
+//import { useEffect } from 'react'
+//import { initDB } from './configs/indexedDb'
 
 function App() {
+
+  // useEffect(() => {
+  //   (async () => {
+  //     await initDB();
+  //   })();
+  // }, []);
+
+  useEffect(() => {
+    faker.seed(123);
+  }, []);
 
   return (
     <motion.div
@@ -44,8 +64,8 @@ function App() {
     }}
     >
       <Routes>
-        <Route element={<PortLayout/>}>
-          <Route path='/' element={<Portfolio/>}>
+        <Route element={<IndexLayout/>}>
+          <Route path='/' element={<IndexPage/>}>
           </Route>
         </Route>
 
@@ -101,6 +121,28 @@ function App() {
         <Route 
         path='/rating1' 
         element={<Rating1Page/>}>
+        </Route>
+
+        {/* search input */}
+        <Route 
+        path='/search' 
+        element={<SearchInputPage/>}>
+        </Route>
+
+        {/* autocomplete search */}
+        <Route 
+        path='/sudoku' 
+        element={<SudokuPage/>}>
+        </Route>
+
+        <Route 
+        path='/paint' 
+        element={<PaintPage/>}>
+        </Route>
+
+        <Route 
+        path='/taskui1' 
+        element={<TaskUi1/>}>
         </Route>
       </Routes>
     </motion.div>

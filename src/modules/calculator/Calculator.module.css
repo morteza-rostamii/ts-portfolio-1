@@ -1,0 +1,19 @@
+
+.calc__grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 
+    /* take 7rem but auto expend */
+    minmax(5rem, auto) 
+    repeat(5, 1fr);
+}
+
+.span_two {
+  grid-column: span 2;
+}
+
+.output {
+  /* span 1 row */
+  grid-column: 1/-1;
+}

@@ -22,6 +22,8 @@ const ProjCard = ({item}: any) => {
         <Image
         className='!object-cover w-full h-full'
         src={item.image}
+        alt={item.name}
+        fallbackSrc='https://placehold.co/400x400/000000/FFFFFF/png'
         />
       </div>
         

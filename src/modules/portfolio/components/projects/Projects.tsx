@@ -34,10 +34,17 @@ let projects = [
   },
   {
     id: faker.string.uuid(),
-    name: 'Color Game',
-    href: '/colorGame',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2FcolorGuessGame.png?alt=media&token=cc4418b8-bbd7-4949-a84a-f9508e89f192',
-    description: 'A color game in react',
+    name: 'search',
+    href: '/search',
+    image: '',
+    description: 'an search input.',
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'sudoku',
+    href: '/sudoku',
+    image: '',
+    description: 'a sudoku game in react.',
   },
   {
     id: faker.string.uuid(),

@@ -1,0 +1,12 @@
+@keyframes animateProgress {
+  from {
+    stroke-dasharray: 0, 565.48; /* Start with no progress */
+  }
+  to {
+    stroke-dasharray: 565.48, 565.48; /* End with full progress */
+  }
+}
+
+#progress {
+  animation: animateProgress 3s ease forwards; /* Animation duration: 3 seconds */
+}

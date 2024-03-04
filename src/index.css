@@ -10,6 +10,11 @@ html, body, #root {
   scroll-behavior: smooth !important;
 }
 
+/* emoji picker */
+.EmojiPickerReact {
+  border: none !important;
+}
+
 .glass-effect {
   background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
   backdrop-filter: blur(10px); /* Applies a blur effect */

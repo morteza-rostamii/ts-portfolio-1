@@ -1,0 +1,9 @@
+
+.carousel_container {
+  perspective: 450px;
+  transform-style: preserve-3d;
+}
+
+.carousel_item {
+
+}
