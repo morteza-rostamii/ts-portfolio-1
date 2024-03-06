@@ -6,6 +6,8 @@ import CryptoPrice from "../cryptoPrice/CryptoPrice"
 import MultiSelectInput1 from "../multiSelect/MultiSelectInput1"
 import CommentsProvider from "../nestedComments/CommentsProvider"
 import NestedComments from "../nestedComments/NestedComments"
+import Quiz from "../quiz/Quiz"
+import QuizProvider from "../quiz/QuizProvider"
 import TodoList1 from "../todo1/TodoList1"
 import TwitchHome from "../twitchHome/TwitchHome"
 import UserProfile from "../userProfile/UserProfile"
@@ -23,11 +25,15 @@ const IndexPage = () => {
 
       {/* <CountDown2/> */}
 
-      <CommentsProvider>
+      {/* <CommentsProvider>
         <NestedComments/>
-      </CommentsProvider>
+      </CommentsProvider> */}
 
-      {/* <CandyCrush/> */}
+      <QuizProvider>
+      <Quiz/>
+      </QuizProvider>
+
+      
     </main>
   )
 }
