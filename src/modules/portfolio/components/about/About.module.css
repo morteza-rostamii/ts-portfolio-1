@@ -1,17 +1,17 @@
 
-ol {
+.list {
   padding-left: 20px;
 }
 
 /* ~ The Spanless List Item Styles! ~ */
-ol { 
+.list { 
   counter-reset: item; 
   /* Hides default counter */
   list-style: none;
 }
 
-li {
-  /* Non-essential list typography */
+.list_item {
+  /* Non-essential .list_itemst typography */
   font-size: 16px;
   line-height: 1.8;
   /* Use flex for hanging bullets */
@@ -22,7 +22,7 @@ li {
 }
 
 /* Begin the fake counters */
-li:before {
+.list_item:before {
   /* Trail counter with period and a space */
   content: counter(item) ". ";
   /* Increase one for every one new item */

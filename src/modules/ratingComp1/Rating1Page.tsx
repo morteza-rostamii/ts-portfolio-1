@@ -1,6 +1,4 @@
-import React from 'react'
 import QuestionStep from './QuestionStep'
-import ThanksStep from './ThanksStep'
 
 const Rating1Page = () => {
   return (

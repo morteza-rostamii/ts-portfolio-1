@@ -1,48 +1,44 @@
+
+// currentTime - now_time = collapsed time
+
 import { useState } from "react";
 
 let timer: any = null;
 
-function useQuizTimer() {
-  //---------timer
+function useQuiz2Timer() {
   const [timePassed, setTimePassed] = useState<number>(0);
 
   const startTimer = () => {
-    // get current time each time timer starts
     const targetTime = new Date().getTime();
-    
-    // every 1 second =: calculate the collapsed time
+
     const calculateTimePassed = () => {
-      // time in milliseconds
       const currentTime = new Date().getTime();
       const difference = currentTime - targetTime;
-
-      // use max to not go into negative
+      
       const timePassedSeconds = Math.max(0, Math.floor(difference / 1000));
 
-      //console.log('**timer', timePassedSeconds);
-
       setTimePassed(timePassedSeconds);
-
     }
 
+    // loop 
     timer = setInterval(() => {
       calculateTimePassed();
-
-      
     }, 1000);
+
   }
 
   const stopTimer = () => {
     setTimePassed(0);
-    console.log('stop-timer', timer);
+    console.log('stopped timer--');
     if (timer) clearInterval(timer);
   }
 
-  // format time to: minutes : seconds
-  const formatTime = (time:number) => {
+  // 01 : 22
+  const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
 
+    // 01 : 03
     const minStr = `${minutes.toString().padStart(2, '0')}`;
     
     const secStr = `${seconds.toString().padStart(2, '0')}`;
@@ -54,12 +50,13 @@ function useQuizTimer() {
   }
 
   return {
-    timePassed,
+    timePassed, // seconds
     setTimePassed,
     startTimer,
     stopTimer,
     formatTime,
-  };
+  }
 }
 
-export default useQuizTimer
+export default useQuiz2Timer
+

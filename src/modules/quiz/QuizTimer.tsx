@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+//import React, { useEffect, useState } from 'react'
 import { useQuiz } from './QuizProvider'
 
 const QuizTimer = () => {
   //const [timePassed, setTimePassed] = useState(0);
   const {
     timePassed,
-    setTimePassed,
+    //setTimePassed,
     formatTime,
   } = useQuiz();
 

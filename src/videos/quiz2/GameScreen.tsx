@@ -1,7 +1,5 @@
 import { Button } from '@chakra-ui/react'
-//import React from 'react'
-import { useQuiz } from './QuizProvider'
-//import { WIN_SCORE } from './QuizProvider'
+import { useQuiz } from './Quiz2Provider';
 
 const GameScreen = () => {
   const {
@@ -11,6 +9,7 @@ const GameScreen = () => {
     //score,
   } = useQuiz();
 
+  console.log(uiState);
   return (
     <div>
       

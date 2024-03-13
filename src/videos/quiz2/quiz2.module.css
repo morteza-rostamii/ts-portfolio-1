@@ -1,0 +1,30 @@
+
+#option_animate {
+  /* background-color: red; */
+  color: #fff;
+  animation-name: pulsing-color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* 
+CSS animations, keyframes define different stages of the animation timeline, from the start (0%) to the end (100%). So, when you specify 0%, 50%, and 100%, you're essentially dividing the total duration of the animation (2s in this case) into different segments.
+
+#a5b4fc
+#6366f1
+#4338ca
+*/
+@keyframes pulsing-color {
+  0% {
+    background-color: #7dd3fc;
+    /* color: #333; */
+  }
+  50% {
+    background-color: #0ea5e9;
+    /* color: #fff; */
+  }
+  100% {
+    background-color: #7dd3fc;
+    /* color: #333; */
+  }
+}

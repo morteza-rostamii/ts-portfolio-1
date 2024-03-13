@@ -2,7 +2,7 @@ import { Avatar, IconButton } from '@chakra-ui/react'
 import { useState } from 'react'
 import SectionHead from '../SectionHead'
 import { faker } from '@faker-js/faker'
-import './About.css';
+import styles from './About.module.css';
 import {motion} from 'framer-motion'
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi2';
 
@@ -79,11 +79,12 @@ export default function About() {
         '
         >
           <motion.ol
-          className='
+          className={`
+          ${styles.list}
           relative
           flex flex-col gap-4 overflow-hidden
           text-gray-600 max-w-[600olx] w-full
-          '
+          `}
           style={{
             counterReset: 'item',
             listStyle: 'none',
@@ -102,10 +103,11 @@ export default function About() {
               ?(
                 aboutItems.map((el:any) => (
                   <li 
-                  className='
+                  className={`
+                  ${styles.list_item}
                   bg-slate-50 py-1 px-2 rounded-md #font-bold text-gray-500 max-w-[600px]
                   hover:bg-slate-100
-                  '
+                  `}
                   key={el.id}
                   
                   >

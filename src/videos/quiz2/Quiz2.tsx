@@ -1,59 +1,52 @@
-import { useQuiz } from "./QuizProvider"
+//import { Button } from "@chakra-ui/react"
+import Quiz2Box from "./Quiz2Box"
+import { useQuiz } from "./Quiz2Provider"
+import Quiz2Timer from "./Quiz2Timer";
 import GameScreen from "./GameScreen";
-import QuizBox from "./QuizBox";
-import QuizTimer from "./QuizTimer";
 
-const Quiz = () => {
+const Quiz2 = () => {
   const {
-    questions,
+    //play,
+    //questionsLoading,
     activeQuestion,
+    questions,
     score,
-    //uiState,
-
-    // refs
     refClickSound,
     refCorrectSound,
     refWrongSound,
-  } =  useQuiz();
+  } = useQuiz();
 
   return (
-    <div className="h-full p-4 #bg-red-50">
-
+    <div 
+    className="
+    h-full p-4
+    "
+    >
       <section
       className="
-      flex flex-col
-      bg-green-100 rounded-md overflow-hidden
-      max-w-[600px] mx-auto shadow-md
+      flex flex-col gap-4
+      bg-green-100 max-w-[600px] mx-auto p-4
       "
       >
-
         <header
         className="
-        flex items-center justify-between p-4 shadow-md
+        flex items-center justify-between
         "
         >
           <div>
-              
-            <QuizTimer/>
-              
+            <Quiz2Timer/>
           </div>
 
-          <div
-          className="
-          grid place-content-center
-          font-bold text-xl bg-white p-1 px-2 rounded-full w-8 h-8
-          "
-          >
+          <div>
             {score}
           </div>
         </header>
 
-        <QuizBox/>
-        
-        {/* footer */}
+        <Quiz2Box/>
+
         <footer
         className="
-       p-4 #rounded-lg text-lg font-bold
+        p-4 #rounded-lg text-lg font-bold
         "
         >
           <p
@@ -66,6 +59,7 @@ const Quiz = () => {
             {questions?.length} 
           </p>
         </footer>
+
       </section>
 
       <GameScreen/>
@@ -97,4 +91,4 @@ const Quiz = () => {
   )
 }
 
-export default Quiz
+export default Quiz2

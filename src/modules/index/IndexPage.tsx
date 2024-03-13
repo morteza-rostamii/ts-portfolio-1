@@ -1,18 +1,20 @@
-import Calculator from "../calculator/Calculator"
-import CandyCrush from "../candyCrush/CandyCrush"
-import CountDown2 from "../countDown2.0/CountDown2"
-import CountDownTimer from "../countDownTimer/CountDownTimer"
-import CryptoPrice from "../cryptoPrice/CryptoPrice"
-import MultiSelectInput1 from "../multiSelect/MultiSelectInput1"
-import CommentsProvider from "../nestedComments/CommentsProvider"
-import NestedComments from "../nestedComments/NestedComments"
-import Quiz from "../quiz/Quiz"
-import QuizProvider from "../quiz/QuizProvider"
-import TodoList1 from "../todo1/TodoList1"
-import TwitchHome from "../twitchHome/TwitchHome"
-import UserProfile from "../userProfile/UserProfile"
-import Wordle from "../wordle/Wordle"
-import IndexSection from "./IndexSection"
+import Quiz2Provider from "@/videos/quiz2/Quiz2Provider"
+// import Calculator from "../calculator/Calculator"
+// import CandyCrush from "../candyCrush/CandyCrush"
+// import CountDown2 from "../countDown2.0/CountDown2"
+// import CountDownTimer from "../countDownTimer/CountDownTimer"
+// import CryptoPrice from "../cryptoPrice/CryptoPrice"
+// import MultiSelectInput1 from "../multiSelect/MultiSelectInput1"
+// import CommentsProvider from "../nestedComments/CommentsProvider"
+// import NestedComments from "../nestedComments/NestedComments"
+// import Quiz from "../quiz/Quiz"
+// import QuizProvider from "../quiz/QuizProvider"
+// import TodoList1 from "../todo1/TodoList1"
+// import TwitchHome from "../twitchHome/TwitchHome"
+// import UserProfile from "../userProfile/UserProfile"
+// import Wordle from "../wordle/Wordle"
+// import IndexSection from "./IndexSection"
+import Quiz2 from "@/videos/quiz2/Quiz2"
 
 const IndexPage = () => {
   return (
@@ -29,11 +31,13 @@ const IndexPage = () => {
         <NestedComments/>
       </CommentsProvider> */}
 
-      <QuizProvider>
+      {/* <QuizProvider>
       <Quiz/>
-      </QuizProvider>
+      </QuizProvider> */}
 
-      
+      <Quiz2Provider>
+        <Quiz2/>
+      </Quiz2Provider>
     </main>
   )
 }

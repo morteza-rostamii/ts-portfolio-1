@@ -1,180 +1,158 @@
 import { ReactNode, createContext, useContext, useEffect, useRef, useState } from "react"
-import useQuizTimer from "./hooks/useQuizTimer";
 import useFetchQuestions from "./hooks/useFetchQuestions";
+import useQuiz2Timer from "./hooks/useQuiz2Timer";
 
-// type TQuizContext = {
-//   //play: () => void,
-// };
-
-const QuizContext = createContext<any>({
-  play: () => {},
-});
+const QuizContext = createContext<any>({});
 
 export const useQuiz = () => {
   const {
     play,
-    handOptionSelection,
-    uiState,
-    questionsLoading,
     questions,
+    questionsLoading,
     activeQuestion,
+    next,
+    score,
+    handOptionSelection,
     selectedOption,
     optionStateUi,
-    refClickSound,
-    refCorrectSound,
-    refWrongSound,
-    score,
-    next,
-
-    // timer
     timePassed,
-    setTimePassed,
     startTimer,
     stopTimer,
     formatTime,
-
+    uiState,
+    refClickSound,
+    refCorrectSound,
+    refWrongSound,
   } = useContext(QuizContext);
 
   return {
     play,
-    handOptionSelection,
-    uiState,
-    questionsLoading,
     questions,
+    questionsLoading,
     activeQuestion,
+    next,
+    score,
+    handOptionSelection,
     selectedOption,
     optionStateUi,
-    refClickSound,
-    refCorrectSound,
-    refWrongSound,
-    score,
-    next,
-
-    // timer
     timePassed,
-    setTimePassed,
     startTimer,
     stopTimer,
     formatTime,
+    uiState,
+    refClickSound,
+    refCorrectSound,
+    refWrongSound,
   };
 };
 
-type TGameState = "off" | "on" | "win" | "over" | "draw";
+// types 
 type TOptionState = 'unselected' | 'selected' | 'decided';
+type TGameState = 'off' | 'on' | 'win' | 'over' | 'draw';
 
 // variables------------
+let selectedChoice: string = '';
+
 export const WIN_SCORE = 20;
 export const LOSE_SCORE = -20;
-export const LOSE_TIME = 240; // seconds
-//export let GAME_STATE: TGameState = 'off'; 
-//export let OPTION_STATE: TOptionState =  'unselected';
-let selectedChoice: string = '';
+export const LOSE_TIME = 240; // 4 min
+
+// game loop
 let gameLoopId: any = null;
 
-const QuizProvider = ({
+const Quiz2Provider = ({
   children,
 }: {
   children: ReactNode,
 }) => {
-  
-  const [uiState, setUiState] = useState<TGameState>('off');
+
+  // active question
   const [activeQuestion, setActiveQuestion] = useState<number>(0);
-  // selected option
+
+  // selected option // text
   const [selectedOption, setSelectedOption] = useState<string>('');
-  // option button states
   const [optionStateUi, setOptionStateUi] = useState<TOptionState>('unselected');
 
-  // -------------score
-  const [score, setScore] = useState(0);
+  // ------score
+  const [score, setScore] = useState<number>(0);
+
+  //------- game state
+  const [uiState, setUiState] = useState<TGameState>('off');
 
   //--------------- audio
   const refClickSound = useRef(null);
   const refCorrectSound = useRef(null);
   const refWrongSound = useRef(null);
 
-  //----------------timer
+  // ------------- questions
+  const {
+    questions,
+    fetchQuestions,
+    questionsLoading
+  } = useFetchQuestions();
+
+  //-------------timer
   const {
     timePassed,
-    setTimePassed,
     startTimer,
     stopTimer,
     formatTime,
-  } = useQuizTimer();
+  } = useQuiz2Timer();
 
-  // fetch questions
-  const {
-    questions,
-    questionsLoading,
-    fetchQuestions,
-  } = useFetchQuestions();
-  
-  //---------------------------- Game Events ---------------------------
+  // ----------------------- game events -------------------
 
-  // Game loop
   const setupGame = () => {
     resetGame();
     startTimer();
   }
 
-  // --------------start the game:
   const play = async () => {
     await fetchQuestions();
-    console.log('start-----game');
-    // enter a loop
+
+    // start or reset the game
     setupGame();
-  };
-
-  // ------------------ select option
-  const handOptionSelection = (option: string) => {
-    setupSelectedOption(option);
-
-    // effect 
-    (refClickSound?.current as any).play();
-
-    // change option_state to selected
-    setupOptionState('selected');
-
-    // after 3 seconds change sate 
-    setTimeout(() => {
-      setupOptionState('decided');
-
-      // correct
-      if (questions[activeQuestion].correctAnswer === selectedChoice) {
-        (refCorrectSound.current as any).play();
-        setScore((c:any) => c + 5);
-      }
-      // wrong
-      else {
-        (refWrongSound.current as any).play();
-        setScore((c:any) => c - 5);
-      }
-
-      //refreshGameState();
-    }, 3000);
   }
 
   const next = () => {
-    if (activeQuestion < questions.length) {
+    if (activeQuestion < questions.length - 1) {
       setActiveQuestion((c:number) => c + 1);
 
-      //reset
+      // reset selected option
       clearSelectedOption();
-
       setupOptionState('unselected');
     }
-  };
-  
-  //---------------------------- set & clean ---------------------------
-
-  const setupGameState = (gameState: TGameState) => {
-    //GAME_STATE = gameState;
-    setUiState(gameState);
   }
 
-  const setupOptionState = (state: TOptionState) => {
-    //OPTION_STATE = state;
-    setOptionStateUi(state);
+  const handOptionSelection = (option: string) => {
+    setupSelectedOption(option);
+
+    // sound effect
+    (refClickSound?.current as any).play();
+
+    setupOptionState('selected');
+
+    // after 3 seconds
+    setTimeout(() => {
+
+      setupOptionState('decided');
+
+      // correct
+      if (selectedChoice === questions[activeQuestion].correctAnswer) {
+        // sound
+        (refCorrectSound?.current as any).play();
+        setScore((c:number) => c + 5);
+      }
+      // wrong
+      else {
+        // sound
+        (refWrongSound?.current as any).play();
+        setScore((c:number) => c - 5);
+      }
+
+    }, 3000);
   }
+
+  // --------------------------- set & clean -----------------------
 
   const setupSelectedOption = (option: string) => {
     setSelectedOption(option);
@@ -186,7 +164,16 @@ const QuizProvider = ({
     selectedChoice = '';
   }
 
-  function cleanup():void {
+  const setupOptionState = (state: TOptionState) => {
+    //OPTION_STATE = state;
+    setOptionStateUi(state);
+  }
+
+  const setupGameState = (gameState: TGameState) => {
+    setUiState(gameState);
+  }
+
+  const cleanup = () => {
     stopTimer();
   }
 
@@ -204,97 +191,102 @@ const QuizProvider = ({
 
     setScore(0);
   }
-  
+
   //---------------------------- Game State change ---------------------------
-  
+
   const checkDraw = (): boolean => {
     let over = false;
+
     if (activeQuestion === questions?.length - 1) {
       if (score < WIN_SCORE) {
+        console.log('draw');
+
         setupGameState('draw');
         over = true;
       }
     }
+
     return over;
   }
 
   const checkTimeout = (): boolean => {
     let over = false;
-    // if: timer runs out
+
     if (timePassed >= LOSE_TIME) {
-      console.log('over', timePassed);
+      console.log('time over: ', timePassed);
       setupGameState('over');
       over = true;
     }
-    console.log('timeout over:: ', over);
+
     return over;
   }
 
   const checkWinOrLoseScore = (): boolean => {
     let over = false;
-    // check for win
+
     if (score >= WIN_SCORE) {
+      console.log('win score');
       setupGameState('win');
       over = true;
     }
 
-    // check for game over
-    console.log(score, LOSE_SCORE)
     if (score <= LOSE_SCORE) {
+      console.log('lose score');
+
       setupGameState('over');
       over = true;
     }
     return over;
   }
 
-  // Game Loop
+  // game loop
   useEffect(() => {
     
     if (uiState === 'on') {
+
       gameLoopId = setInterval(() => {
 
-        console.log('--game loop:: ')
-        
-        // stop the Game
         if (
           checkDraw() ||
-          checkTimeout() || 
+          checkTimeout() ||
           checkWinOrLoseScore()
         ) {
-          console.log('end game---');
+          console.log('gameLoopStopped');
           clearInterval(gameLoopId);
           cleanup();
         }
+
       }, 200);
+
     }
 
     return () => clearInterval(gameLoopId);
   }, [uiState, score, timePassed, activeQuestion]);
-
+    
   // End-----------------------
 
   const context = {
     play,
-    handOptionSelection,
+
     questions,
-    activeQuestion,
-    uiState,
     questionsLoading,
+
+    activeQuestion,
+    next,
+    score,
+    handOptionSelection,
     selectedOption,
     optionStateUi,
+
+    timePassed,
+    startTimer,
+    stopTimer,
+    formatTime,
+    uiState,
 
     refClickSound,
     refCorrectSound,
     refWrongSound,
-    score,
-    next,
-
-    // timer
-    timePassed,
-    setTimePassed,
-    startTimer,
-    stopTimer,
-    formatTime,
   };
 
   return (
@@ -306,4 +298,4 @@ const QuizProvider = ({
   )
 }
 
-export default QuizProvider
+export default Quiz2Provider

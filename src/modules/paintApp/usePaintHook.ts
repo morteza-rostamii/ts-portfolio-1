@@ -17,7 +17,7 @@ function usePaintHook() {
   const drawDot = (
     x: number,
     y: number,
-    radius: number,
+    //radius: number,
     color: string,
   ) => {
     const ctx = canvasRef.current.getContext('2d');
@@ -88,7 +88,9 @@ function usePaintHook() {
   }
 
   // get x and y of mouse click
-  const getMousePosition = (canvas:any, event:any) => {
+  const getMousePosition = (
+    //canvas:any, 
+    event:any) => {
     //const rect = canvas.getBoundingClientRect();
 
     const x = event.clientX - canvasRef.current.offsetLeft;

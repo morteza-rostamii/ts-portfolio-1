@@ -1,6 +1,4 @@
-import { Button } from '@chakra-ui/react'
 import styles from './quiz.module.css'
-import { useRef } from 'react'
 import { useQuiz } from './QuizProvider'
 import { HiClipboardCheck } from 'react-icons/hi'
 
@@ -16,22 +14,22 @@ const Option = ({
 
   return (
     
-    <Button 
+    <button 
     id={(optionStateUi === 'selected') && (selectedOption === item.option) ? styles.option_animate : ''}
     className={`
     ${
-      optionStateUi === 'decided'
-      ?(
-        item.option === question.correctAnswer
-        ? 'bg-green-500' 
-        :'bg-red-500'
-      ): ''
-      }
-    #bg-sky-100 p-2 !rounded-[9999px] font-bold 
+    optionStateUi === 'decided'
+    ?(
+      item.option === question.correctAnswer
+      ? 'bg-green-500' 
+      :'bg-red-500'
+    ): 'bg-sky-100 hover:bg-sky-200'
+    }
+    flex items-center justify-between
+    p-2 !rounded-[9999px] font-bold 
     #!text-white !whitespace-normal
+    transition-all
     `}
-    colorScheme={'gray'}
-    variant={'outline'}
 
     onClick={() => {
       // only allowed to pick one option for each question
@@ -39,7 +37,6 @@ const Option = ({
       handOptionSelection(item.option);
     }}
 
-    rightIcon={selectedOption === item.option ? <HiClipboardCheck size={24} color='white'/> : <></>}
 
     //isDisabled={}
     style={{
@@ -51,7 +48,8 @@ const Option = ({
         __html: item.option
       }}
       ></span>
-    </Button>
+      {selectedOption === item.option ? <HiClipboardCheck size={24} color='white'/> : <></>}
+    </button>
   )
 }
 

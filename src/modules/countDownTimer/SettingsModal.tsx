@@ -10,8 +10,6 @@ import {
   Button,
 } from '@chakra-ui/react'
 
-
-import useCountDown from './useCountDown'
 import Counter from './Counter'
 
 function SettingsModal({
@@ -19,7 +17,7 @@ function SettingsModal({
   pickTime,
   setPickTime,
   saveTimer,
-  cancelTimer,
+  //cancelTimer,
 }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 

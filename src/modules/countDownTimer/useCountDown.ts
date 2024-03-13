@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { formatNumToStr } from "./countDownUtils";
 
-const stopToast = (time:string) => toast(time);
+//const stopToast = (time:string) => toast(time);
 
 let TOTAL_SEC = 0;
 let totalSeconds = 0;

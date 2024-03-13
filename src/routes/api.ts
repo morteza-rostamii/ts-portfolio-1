@@ -1,9 +1,9 @@
 
 import axios from 'axios'
 
-const setting = {
-  baseURL: ''
-};
+// const setting = {
+//   baseURL: ''
+// };
 
 const Axios = axios.create({});
 

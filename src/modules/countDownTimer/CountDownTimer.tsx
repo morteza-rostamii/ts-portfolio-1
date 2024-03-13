@@ -1,18 +1,16 @@
 import useCountDown, { RADIUS } from "./useCountDown"
 import { IconButton } from "@chakra-ui/react";
-import { LucideTimerReset } from "lucide-react";
 import { Toaster } from "react-hot-toast";
-import { FaPause, FaStop, FaStopCircle } from "react-icons/fa";
+import { FaPause, FaStop,  } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
 import SettingsModal from "./SettingsModal";
-import { useEffect } from "react";
 //import './countDown.css';
 
 const CountDownTimer = () => {
   const {
-    totalSeconds,
+    //totalSeconds,
     displayTime,
-    timerStateUi,
+    //timerStateUi,
     //finalTime,
     //setTime,
     start,

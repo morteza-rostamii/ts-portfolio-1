@@ -1,4 +1,4 @@
-import { Avatar, Button, FormLabel, Image, Input, Textarea } from "@chakra-ui/react";
+import { Avatar, Button,  Input, Textarea } from "@chakra-ui/react";
 import useProfileHook from "./useProfileHook";
 
 

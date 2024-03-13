@@ -1,7 +1,6 @@
-import { Button, IconButton, Skeleton } from "@chakra-ui/react"
-import React, { useEffect, useRef, useState } from "react";
-import { HiClock, HiOutlineClock, HiOutlineMagnifyingGlass } from "react-icons/hi2"
-import { IoTimeOutline } from "react-icons/io5";
+import { IconButton, Skeleton } from "@chakra-ui/react"
+import { useEffect, useRef, useState } from "react";
+import { HiOutlineClock, HiOutlineMagnifyingGlass } from "react-icons/hi2"
 import { useSearchWords } from "./hooks/useSearchWords";
 
 const SearchInputPage = () => {

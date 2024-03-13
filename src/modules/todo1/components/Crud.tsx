@@ -1,14 +1,14 @@
 import { Button, Input } from "@chakra-ui/react";
-import { faker } from "@faker-js/faker";
-import { useState } from "react";
+//import { faker } from "@faker-js/faker";
+//import { useState } from "react";
 
 const Crud = () => {
-  const [tasks, setTasks] = useState([{
-    id: faker.string.uuid(),
-    name: 'do something',
-  }]);
+  // const [tasks, setTasks] = useState([{
+  //   id: faker.string.uuid(),
+  //   name: 'do something',
+  // }]);
 
-  const [task, setTask] = useState<{id: String, name:string} | null>(null);
+  // const [task, setTask] = useState<{id: String, name:string} | null>(null);
 
   return (
     <div>
@@ -47,12 +47,12 @@ const Crud = () => {
           get one item
         </Button>
         
-        <div>
+        {/* <div>
           {task?.name}
-        </div>
+        </div> */}
       </form>
 
-      <ul>
+      {/* <ul>
         {
           tasks?.length
           ?(
@@ -91,7 +91,7 @@ const Crud = () => {
             ))
           ): ''
         }
-      </ul>
+      </ul> */}
 
       {/* upload image to indexedDb */}
       <form >

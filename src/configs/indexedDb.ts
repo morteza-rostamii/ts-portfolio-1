@@ -1,4 +1,4 @@
-import { resolve } from "path";
+//import { resolve } from "path";
 
 const indexedDB: any = 
   window.indexedDB ||
@@ -28,7 +28,10 @@ const DbName = 'challenges';
 
 export const initDB = (): Promise<boolean> => {
 
-  return new Promise((resolve:any, reject:any) => {
+  return new Promise((
+    resolve:any, 
+    //reject:any
+    ) => {
     // open connection
     request = indexedDB.open(DbName);
 
@@ -121,7 +124,9 @@ export const updateDocById = <T>(storeName:string, data: T, id: string): Promise
         updatedDoc = Object.assign({}, task, data);
         const updatedRequest = store.put(updatedDoc);
 
-        updatedRequest.onsuccess = function(event:any) {
+        updatedRequest.onsuccess = function(
+          //event:any
+          ) {
           resolve(updatedDoc);
         };
       }

@@ -3,12 +3,12 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  PopoverHeader,
+  //PopoverHeader,
   PopoverBody,
-  PopoverFooter,
+  //PopoverFooter,
   PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
+  //PopoverCloseButton,
+  //PopoverAnchor,
   IconButton,
 } from '@chakra-ui/react'
 import { BsEmojiGrimace } from 'react-icons/bs';
@@ -47,7 +47,7 @@ function EmojiSelector({
         >
           <EmojiPicker 
           reactionsDefaultOpen={true}
-          //allowExpandReactions={false}
+          allowExpandReactions={false}
 
           onEmojiClick={(data: any) => handEmojiInput(data)}
           />

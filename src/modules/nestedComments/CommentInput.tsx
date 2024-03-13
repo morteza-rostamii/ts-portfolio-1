@@ -1,4 +1,4 @@
-import { Avatar, Button, Input, Textarea } from "@chakra-ui/react"
+import { Avatar, Button, Textarea } from "@chakra-ui/react"
 import { faker } from "@faker-js/faker"
 import EmojiSelector from "./EmojiSelector"
 import { useState } from "react";

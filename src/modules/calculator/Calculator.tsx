@@ -1,4 +1,3 @@
-import { Button } from '@chakra-ui/react'
 //import './Calculator.css'
 import { faker } from '@faker-js/faker';
 import styles from './Calculator.module.css'

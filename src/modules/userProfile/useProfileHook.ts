@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
-import { Stores, addData, initDB } from "@/configs/indexedDb"
-import { faker } from "@faker-js/faker";
+import { 
+  Stores, 
+  addDoc, 
+  initDB } from "@/configs/indexedDb"
+//import { faker } from "@faker-js/faker";
 
 function useProfileHook() {
   const [name, setName] = useState('');
@@ -16,7 +19,7 @@ function useProfileHook() {
     const id = '62516720-5f36-446b-b0e6-40d015ade7e0';
     
     try {
-      const res = await addData(Stores.Users, {
+      const res = await addDoc(Stores.Users, {
         id,
         name,
         description,

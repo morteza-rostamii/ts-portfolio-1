@@ -8,7 +8,7 @@ let projects = [
     id: faker.string.uuid(),
     name: 'Airbnb clone',
     href: 'https://airbnb-1-0.vercel.app/',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2Fairbnb.png?alt=media&token=bc0b30cd-0e4d-4fd2-a307-e9df6dd33880',
+    image: '',
     description: 'Airbnb clone ui',
   },
   // {
@@ -18,79 +18,93 @@ let projects = [
   //   image: '/portfolio/projects/teslahomepage.png',
   //   description: 'A clone of tesla home page ui.',
   // },
-  {
-    id: faker.string.uuid(),
-    name: 'Budget App',
-    href: '/budget',
-    image: '',
-    description: 'a budget application',
-  },
+  // {
+  //   id: faker.string.uuid(),
+  //   name: 'Budget App',
+  //   href: '/budget',
+  //   image: '',
+  //   description: 'a budget application',
+  // },
   {
     id: faker.string.uuid(),
     name: 'Color Game',
     href: '/colorGame',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2FcolorGuessGame.png?alt=media&token=cc4418b8-bbd7-4949-a84a-f9508e89f192',
+    image: '',
     description: 'A color game in react',
   },
   {
     id: faker.string.uuid(),
-    name: 'search',
+    name: 'Search',
     href: '/search',
     image: '',
     description: 'an search input.',
   },
   {
     id: faker.string.uuid(),
-    name: 'sudoku',
-    href: '/sudoku',
+    name: 'Quiz',
+    href: '/quiz-app',
     image: '',
-    description: 'a sudoku game in react.',
+    description: 'a Quiz app in react js.',
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'Comments',
+    href: '/comments',
+    image: '',
+    description: 'a youtube style comment section.',
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'Timer',
+    href: '/timer',
+    image: '',
+    description: 'a stop watch type of timer.',
   },
   {
     id: faker.string.uuid(),
     name: 'Travel website',
     href: 'https://rostami-react-ui-1.web.app/booking',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2Ftravel.png?alt=media&token=1faafa40-77ef-4c8a-8dc4-217386cba2d2',
+    image: '',
     description: 'homepage design of a travel website.',
   },
   {
     id: faker.string.uuid(),
     name: 'Online Shop',
     href: 'https://rostami-react-ui-1.web.app/chair-site',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2FchairShop.png?alt=media&token=ff956b6b-596c-46c4-b506-c626b693fb5c',
+    image: '',
     description: 'An online shop homepage ui.',
   },
   {
     id: faker.string.uuid(),
     name: 'digikala',
     href: 'https://rostami-react-ui-1.web.app/digikala',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2Fdigikala.png?alt=media&token=420a8489-fc3a-446f-a6ae-7ff983ca7525',
+    image: '',
     description: 'digikala homepage ui',
   },
   {
     id: faker.string.uuid(),
     name: 'Restaurant Finder',
     href: '/restaurant',
-    image: 'https://firebasestorage.googleapis.com/v0/b/rostami--portfolio.appspot.com/o/projects%2Frestaurant.jpg?alt=media&token=7d5f466f-13a8-4667-8ee1-d6a93c5fc6ff',
+    image: '',
     description: 'Restaurant Finder ui',
   },
   
 ];
 
-const placeholders = Array.from({length: 10}).map(() => {
-  return {
-    id: faker.string.uuid(),
-    name: 'placeholder',
-    href: '#',
-    image: faker.image.urlPlaceholder({
-      width: 200,
-      height: 200,
-    }),
-    description: faker.lorem.words({min: 10, max: 15}),   
-  }
-});
+// const placeholders = Array.from({length: 10}).map(() => {
+//   return {
+//     id: faker.string.uuid(),
+//     name: 'placeholder',
+//     href: '#',
+//     image: faker.image.urlPlaceholder({
+//       width: 200,
+//       height: 200,
+//     }),
+//     description: faker.lorem.words({min: 10, max: 15}),   
+//   }
+// });
 
-projects = [...projects, ...placeholders];
+// projects = [...projects, ...placeholders];
 
 // let page = 1;
 // let LIMIT = 6;
@@ -151,7 +165,7 @@ export default function Projects() {
       <div
       className='
       relative
-      grid place-content-center gap-6
+      #grid #place-content-center #gap-6
       mb-10 px-8 #max-w-[1000px] container mx-auto
       '
       >
@@ -165,7 +179,7 @@ export default function Projects() {
         grid gap-4
         '
         style={{
-          gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))"
+          gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))"
         }}
         >
           {

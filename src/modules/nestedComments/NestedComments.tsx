@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import { BsFilterLeft } from "react-icons/bs";
 import CommentInput from "./CommentInput";
-import { useEffect, useState } from "react";
+import { useEffect,  } from "react";
 import CommentSection from "./CommentSection";
 import { useComments } from "./CommentsProvider";
 

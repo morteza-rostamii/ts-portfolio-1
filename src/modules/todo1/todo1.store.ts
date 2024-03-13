@@ -1,48 +1,48 @@
-import create from 'zustand'
+// import create from 'zustand'
 
-import { Stores, addDoc, initDB } from "@/configs/indexedDb"
+// import { Stores, addDoc, initDB } from "@/configs/indexedDb"
 
-const useTodo1Store = create<any>((set: any) => ({
+// const useTodo1Store = create<any>((set: any) => ({
   
-  addTaskAct: (payload: task) => {
-    try{
+//   addTaskAct: (payload: task) => {
+//     try{
 
-    }
-    catch(error:any) {
-      console.log(error?.message || error);
-    }
-  },
+//     }
+//     catch(error:any) {
+//       console.log(error?.message || error);
+//     }
+//   },
 
-  deleteTaskAct: () => {
-    try{
+//   deleteTaskAct: () => {
+//     try{
 
-    }
-    catch(error:any) {
-      console.log(error?.message || error);
-    }
-  },
+//     }
+//     catch(error:any) {
+//       console.log(error?.message || error);
+//     }
+//   },
 
-  getDocsAct: () => {
-    try{
+//   getDocsAct: () => {
+//     try{
 
-    }
-    catch(error:any) {
-      console.log(error?.message || error);
-    }
-  },
+//     }
+//     catch(error:any) {
+//       console.log(error?.message || error);
+//     }
+//   },
 
-  getDocAct: () => {
-    try{
+//   getDocAct: () => {
+//     try{
 
-    }
-    catch(error:any) {
-      console.log(error?.message || error);
-    }
-  },
-}));
+//     }
+//     catch(error:any) {
+//       console.log(error?.message || error);
+//     }
+//   },
+// }));
 
-const unsub = useTodo1Store.subscribe((state:any) => {
-  console.log('useTodo1Store: ', state);
-});
+// const unsub = useTodo1Store.subscribe((state:any) => {
+//   console.log('useTodo1Store: ', state);
+// });
 
-export default useTodo1Store;
+// export default useTodo1Store;

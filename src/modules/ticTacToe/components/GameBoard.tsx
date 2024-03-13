@@ -2,7 +2,7 @@ import Cell from "./Cell"
 
 const GameBoard = ({
   board,
-  currPlayer,
+  //currPlayer,
 }: any) => {
   return (
     <div
